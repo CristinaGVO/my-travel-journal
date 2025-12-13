@@ -41,3 +41,5 @@ Deployed App link:
 GitHub Repository link: https://github.com/CristinaGVO/my-travel-journal.git
 
 Trello planning link: https://trello.com/b/ySe8UN2v/proyect-2-my-travel-journal
+
+Cristina Gibney - Student General Assemmbly
