@@ -1,6 +1,6 @@
  🌍 My-Travel-Journal
 
-My Travel Journal is a full-stack MEN application that allows users to create a personal travel diary.  
+My Travel Journal is a full-stack application that allows users to create a personal travel journal. 
 After signing up, users can record, view, update, and delete their trips — storing memories such as destination, location, trip type, dates, notes, photos links, and ratings.
 
 This project was created as part of General Assembly’s Software Engineering Immersive (Project 2).
@@ -19,11 +19,11 @@ This project was created as part of General Assembly’s Software Engineering Im
 - EJS templates for views
 - RESTful routing structure
 
-Stretch Goals (Planned)
+Stretch Goals
 
 - Filter trips by type (roadtrip, hiking, city, beach, etc.)
 - Filter or sort trips by rating
-- Upload multiple photos using external services (Cloudinary, etc.)
+- Upload multiple photos using external services
 
  Technologies Used
  
@@ -31,7 +31,7 @@ Stretch Goals (Planned)
 - Express.js  
 - MongoDB + Mongoose  
 - EJS  
-- CSS / Flexbox / Grid  
+- CSS 
 - Session-based authentication  
 - Git & GitHub  
 
