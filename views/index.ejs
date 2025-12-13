@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-</head>
-<body>
-  <% if (user) { %>
-    <h1>Welcome to the app, <%= user.username %>!</h1>
-    <p>
-      <a href="/auth/sign-out">Sign out</a>
-    </p>
-  <% } else { %>
-    <h1>Welcome to the app, guest.</h1>
-    <p>
-      <a href="/auth/sign-up">Sign up</a> or
-      <a href="/auth/sign-in">Sign in</a>.
-    </p>
-  <% } %>
-  <p><a href="/vip-lounge">Get into the VIP Users Only lounge!</a></p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Travel Journal</title>
+  </head>
+  <body>
+    <header>
+      <h1>My Travel Journal</h1>
+      <p>
+        Organize your adventures. Relive your best moments. Plan your next trip.
+      </p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Track your trips and adventures</h2>
+        <p>
+          Save destinations, dates, favorite places, and the little moments that
+          made each journey unforgettable.
+        </p>
+        <ul>
+          <li>✨ Keep all your trips in one place</li>
+          <li>📍 Remember where you've been, when and more</li>
+          <li>📝 Add notes, highlights, and memories</li>
+          <li>⭐ Rate your experiences</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ready to start?</h2>
+        <p>Create your account or sign in to continue your journey.</p>
+        <p>
+          <a href="/auth/sign-up">Sign up to begin</a>
+          &nbsp;|&nbsp;
+          <a href="/auth/sign-in">Sign in to your journal</a>
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
