@@ -34,6 +34,18 @@ app.use(
 
 app.use(passUserToView);
 
+
+
+
+app.get('/', (req, res) => {
+  if (req.session.user) {
+    res.redirect(`/users/${req.session.user._id}/trips`);
+  } else {
+    res.render('index.ejs');
+  }
+});
+
+
 app.get('/', (req, res) => {
   res.render('index.ejs', {
     user: req.session.user,

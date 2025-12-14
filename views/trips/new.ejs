@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a New Trip</title>
+  </head>
+
+  <body>
+
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Your Journey Trips</h1>
+
+    <form action="/users/<%= user._id %>/trips" method="POST">
+
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required />
+      
+        
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location"
+          placeholder="City, Country or State" required />
+
+      
+        <label for="tripType">Trip type:</label>
+        <select id="tripType" name="tripType">
+          <option value="">-- Select type --</option>
+          <option value="roadtrip">Roadtrip</option>
+          <option value="hiking">Hiking</option>
+          <option value="city">City</option>
+          <option value="beach">Beach</option>
+          <option value="other">Other</option>
+        </select>
+      
+        <label for="startDate">Start date:</label>
+        <input type="date" id="startDate" name="startDate" />
+      
+        <label for="endDate">End date:</label>
+        <input type="date" id="endDate" name="endDate" />
+      
+
+        <label for="highlights">Highlights:</label>
+        <textarea id="highlights" name="highlights" rows="4"
+        placeholder="Favorite moments, best time for visit this place, places you visited, people you met..."
+        ></textarea>
+      
+        <label for="photosLink">Photos link:</label>
+        <input type="url" id="photosLink" name="photosLink"
+          placeholder="link to your photo album, instagram, google photos.."
+        />
+      
+        <label for="rating">Rating (1–5):</label>
+        <input
+          type="number"
+          id="rating"
+          name="rating"
+          min="1"
+          max="5"
+          placeholder="5"
+        />
+    
+        <button type="submit">Add Trip</button>
+      </form>
+
+  </body>
+
+</html>
