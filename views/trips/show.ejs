@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= trip.title %></title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= trip.destination %> at <%= trip.location %></h1>
+
+    <% if (trip.tripType) { %>
+        <p><strong>Trip type:</strong> <%= trip.tripType %></p>
+        <% } %>
+    
+        <!-- Fechas -->
+        <% if (trip.startDate || trip.endDate) { %>
+          <p>
+            <strong>Dates:</strong>
+            <% if (trip.startDate) { %>
+              From <%= trip.startDate.toDateString() %>
+            <% } %>
+            <% if (trip.endDate) { %>
+              to <%= trip.endDate.toDateString() %>
+            <% } %>
+          </p>
+        <% } %>
+        <!-- notas -->
+        <% if (trip.highlights) { %>
+          <p><strong>Highlights:</strong> <%= trip.highlights %></p>
+        <% } %>
+        <!-- Link de fotos-->
+        <% if (trip.photosLink) { %>
+          <p>
+            <strong>Photos:</strong>
+            <a href="<%= trip.photosLink %>" target="_blank">
+              View trip photos
+            </a>
+          </p>
+        <% } %>
+        <!-- Rating -->
+        <% if (trip.rating) { %>
+          <p><strong>Rating:</strong> <%= trip.rating %> / 5 ⭐</p>
+        <% } %>
+
+        <a href="/users/<%= user._id %>/trips/<%= trip._id %>/edit">
+            Edit this Trip
+          </a>
+
+        <form
+        action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=DELETE"
+        method="POST"
+      >
+        <button type="submit">Delete this Trip</button>
+      </form>
+
+  </body>
+</html>

@@ -11,7 +11,10 @@
     <a href="/users/<%=user._id%>/trips/new">Add an New Trip</a>
     <ul>
         <% trips.forEach((trip)=>{ %>
-        <li><%= trip.destination %> at <%= trip.location %></li>
+        <li>
+            <a href="/users/<%= user._id %>/trips/<%= trip._id %>">
+            <%= trip.destination %> at <%= trip.location %>
+        </li>
         <% }) %>
       </ul>
   </body>
