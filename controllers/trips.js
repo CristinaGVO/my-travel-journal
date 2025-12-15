@@ -2,26 +2,51 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user.js');
 
-
+// ruta get con filtros incluidos
 
 router.get('/', async (req, res) => {
-  try {
-    const currentUser = await User.findById(req.session.user._id);
+    try {
+      const currentUser = await User.findById(req.session.user._id);
+  
+      let trips = currentUser.trips;
+  
+      const { tripType, minRating, welcome} = req.query;
+  
+      // Filtro por tipo de viaje
+      if (tripType && tripType !== '') {
+        trips = trips.filter((trip) => trip.tripType === tripType);
+    }
+  
+      // Filtro por rating 
+      if (minRating && minRating !== '') {
+        const min = Number(minRating);
+        trips = trips.filter((trip) => {
+
+          // solo filtra si el trip tiene rating
+          return typeof trip.rating === 'number' && trip.rating >= min;
+        });
+    } // para incluir el nombre en sigin
+      const showWelcome = welcome === 'true';
+
     res.render('trips/index.ejs', {
-      trips: currentUser.trips,
+      trips,
+      selectedTripType: tripType || '',
+      selectedMinRating: minRating || '',
+      showWelcome,
     });
   } catch (error) {
     console.log(error);
     res.redirect('/');
   }
 });
+  
 
-
+//ruta get para la nueva
 router.get('/new', async (req, res) => {
   res.render('trips/new.ejs');
 });
 
-// Show
+// Show ruta para mostrar
 
 router.get('/:tripId', async (req, res) => {
   try {
@@ -37,7 +62,7 @@ router.get('/:tripId', async (req, res) => {
 });
 
 
-// poner informacion
+// ruta para poner informacion
 
 router.post('/', async (req, res) => {
   try {
@@ -66,7 +91,7 @@ router.delete('/:tripId', async (req, res) => {
   }
 });
 
-// editar -update informacion
+// ruta editar -update informacion
 
 router.put('/:tripId', async (req, res) => {
   try {

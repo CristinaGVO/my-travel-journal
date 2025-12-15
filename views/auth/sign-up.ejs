@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up</title>
+  <title>Sign Up - My Travel Journal </title>
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <h1>Create a new account!</h1>
+
+  <main class="page auth-page">
+    <section class="auth-card">
+      <h1>Create your Travel Journal ✈️</h1>
+      <p class="auth-subtitle">
+        Start saving your trips, memories, and favorite places in one place.
+      </p>
+
+
   <form action="/auth/sign-up" method="POST">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required />
@@ -20,7 +28,14 @@
       id="confirmPassword"
       required 
     />
-    <button type="submit">Sign up</button>
-  </form>
+    <button type="submit">Sign Up</button>
+      </form>
+
+      <p class="auth-footer-text">
+        Already have an account?
+        <a href="/auth/sign-in">Sign In to your journal</a>
+      </p>
+    </section>
+  </main>
 </body>
 </html>

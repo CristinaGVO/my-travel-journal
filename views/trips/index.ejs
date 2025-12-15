@@ -1,21 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Journal Trips</title>
-  </head>
-  <body>
+</head>
+<body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Your Journal Trips</h1>
-    <a href="/users/<%=user._id%>/trips/new">Add an New Trip</a>
-    <ul>
-        <% trips.forEach((trip)=>{ %>
-        <li>
-            <a href="/users/<%= user._id %>/trips/<%= trip._id %>">
-            <%= trip.destination %> at <%= trip.location %>
-        </li>
-        <% }) %>
-      </ul>
-  </body>
-</html>
+        <h1>Your Journal Trips</h1>
+        <main class="page page-trips">
+            <% if (showWelcome && user) { %>
+                <div class="welcome-banner">
+                    <p>
+                        Welcome, <strong>
+                            <%= user.username %>
+                        </strong>
+                    </p>
+                </div>
+                <% } %>
+                    <!-- Filtros -->
+                    <form action="/users/<%= user._id %>/trips" method="GET" class="filter-form">
+                        <!-- Filtro por tipo -->
+                        <label for="tripTypeFilter">Filter by trip type:</label>
+                        <select id="tripTypeFilter" name="tripType">
+                            <option value="">All types</option>
+                            <option value="roadtrip" <%=selectedTripType==='roadtrip' ? 'selected' : '' %>>
+                                Roadtrip
+                            </option>
+                            <option value="hiking" <%=selectedTripType==='hiking' ? 'selected' : '' %>>
+                                Hiking
+                            </option>
+                            <option value="city" <%=selectedTripType==='city' ? 'selected' : '' %>>
+                                City
+                            </option>
+                            <option value="beach" <%=selectedTripType==='beach' ? 'selected' : '' %>>
+                                Beach
+                            </option>
+                            <option value="other" <%=selectedTripType==='other' ? 'selected' : '' %>>
+                                Other
+                            </option>
+                        </select>
+
+                        <!-- Filtro por rating mínimo -->
+                        <label for="minRatingFilter">Rating:</label>
+                        <select id="minRatingFilter" name="minRating">
+                            <option value="">Any rating</option>
+                            <option value="1" <%=selectedMinRating==='1' ? 'selected' : '' %>>1⭐</option>
+                            <option value="2" <%=selectedMinRating==='2' ? 'selected' : '' %>>2⭐</option>
+                            <option value="3" <%=selectedMinRating==='3' ? 'selected' : '' %>>3⭐</option>
+                            <option value="4" <%=selectedMinRating==='4' ? 'selected' : '' %>>4⭐</option>
+                            <option value="5" <%=selectedMinRating==='5' ? 'selected' : '' %>>5⭐</option>
+                        </select>
+
+                        <button type="submit">Apply filters</button>
+                    </form>
+
+                    <p>
+                        <a href="/users/<%= user._id %>/trips">Clear filters</a>
+                    </p>
+
+                    <p>
+                        <a href="/users/<%= user._id %>/trips/new">Add a new trip</a>
+                    </p>
+
+                    <ul>
+                        <% trips.forEach((trip)=> { %>
+                            <li>
+                                <a href="/users/<%= user._id %>/trips/<%= trip._id %>">
+                                    <strong>
+                                        <%= trip.destination %>
+                                    </strong> — <%= trip.location %>
+                                        <% if (trip.tripType) { %>
+                                            - <%= trip.tripType %>
+                                                <% } %>
+                                                    <% if (trip.rating) { %>
+                                                        — <%= trip.rating %>/5 ⭐
+                                                            <% } %>
+                                </a>
+                            </li>
+                            <% }) %>
+                    </ul>
+</body </html>

@@ -1,11 +1,11 @@
- 🌍 My-Travel-Journal
+ **🌍 My-Travel-Journal**
 
 My Travel Journal is a full-stack application that allows users to create a personal travel journal. 
 After signing up, users can record, view, update, and delete their trips — storing memories such as destination, location, trip type, dates, notes, photos links, and ratings.
 
 This project was created as part of General Assembly’s Software Engineering Immersive (Project 2).
 
-✨ Features (MVP)
+*Features (MVP)*
 
 - User authentication (sign up, sign in, session-based auth)
 - Authorization (only logged-in users can manage their trips)
@@ -19,13 +19,35 @@ This project was created as part of General Assembly’s Software Engineering Im
 - EJS templates for views
 - RESTful routing structure
 
-Stretch Goals
+*Stretch Goals*
 
 - Filter trips by type (roadtrip, hiking, city, beach, etc.)
 - Filter or sort trips by rating
 - Upload multiple photos using external services
 
- Technologies Used
+
+*Stretch Goals I did:* As part of improving my project, I added a simple filtering feature for the trips page.
+
+Trip Filters (By Type and Rating)
+
+*Filter by Trip Type*
+
+I wanted users to quickly find specific kinds of trips—like only beach trips, only city trips, or only hiking adventures.
+So I added a dropdown menu where the user can choose a trip type, and the page will show only the trips that match.
+
+Examples: Show only beach trips - Show only roadtrip adventures.
+
+This makes the list easier to navigate when many trips are saved.
+
+*Filter by Rating*
+
+I also added the option to filter trips by the minimum rating.
+
+Example: Show trips rated 4 stars or higher - Show trips rated 3+
+
+This helps the user find their best experiences quickly.
+
+ *Technologies Used*
  
 - Node.js  
 - Express.js  
@@ -35,11 +57,12 @@ Stretch Goals
 - Session-based authentication  
 - Git & GitHub  
 
+*Proyect Links:*
 
-Deployed App link: 
+Deployed App link:
 
 GitHub Repository link: https://github.com/CristinaGVO/my-travel-journal.git
 
 Trello planning link: https://trello.com/b/ySe8UN2v/proyect-2-my-travel-journal
 
-Cristina Gibney - Student General Assemmbly
+Cristina Gibney 2025 - Student General Assemmbly
