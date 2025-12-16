@@ -43,14 +43,14 @@
           <label for="minRatingFilter">Minimum rating</label>
           <select id="minRatingFilter" name="minRating">
             <option value="" <%= selectedMinRating === '' ? 'selected' : '' %>>Any rating</option>
-            <option value="1" <%= selectedMinRating === '1' ? 'selected' : '' %>>1⭐ and up</option>
-            <option value="2" <%= selectedMinRating === '2' ? 'selected' : '' %>>2⭐ and up</option>
-            <option value="3" <%= selectedMinRating === '3' ? 'selected' : '' %>>3⭐ and up</option>
-            <option value="4" <%= selectedMinRating === '4' ? 'selected' : '' %>>4⭐ and up</option>
-            <option value="5" <%= selectedMinRating === '5' ? 'selected' : '' %>>5⭐ only</option>
+            <option value="1" <%= selectedMinRating === '1' ? 'selected' : '' %>>1⭐ </option>
+            <option value="2" <%= selectedMinRating === '2' ? 'selected' : '' %>>2⭐ </option>
+            <option value="3" <%= selectedMinRating === '3' ? 'selected' : '' %>>3⭐ </option>
+            <option value="4" <%= selectedMinRating === '4' ? 'selected' : '' %>>4⭐ </option>
+            <option value="5" <%= selectedMinRating === '5' ? 'selected' : '' %>>5⭐ </option>
           </select>
 
-          <button class="btn btn-primary" type="submit">Apply filters</button>
+          <button class="btn btn-secondary" type="submit">Apply filters</button>
         </form>
 
         <hr style="margin: 1.25rem 0; border: none; border-top: 1px solid #e2e8f0;" />
@@ -75,10 +75,11 @@
           </ul>
         <% } %>
 
-        <footer class="footer">
-          <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
-        </footer>
+        
       </div>
+      <footer class="footer">
+        <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
+      </footer>
     </main>
   </body>
 </html>

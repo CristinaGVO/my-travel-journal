@@ -6,10 +6,8 @@
     <title>My Travel Journal</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-
   <body class="bg bg-home">
     <%- include('./partials/_navbar.ejs') %>
-
     <main class="container">
       <div class="card card-lg">
         <header class="hero">
@@ -17,10 +15,9 @@
           <p class="hero__subtitle">
             Organize your adventures. Relive your best moments. Plan your next trip.
           </p>
-
           <div class="actions">
             <a class="btn btn-primary" href="/auth/sign-up">Create your journal</a>
-            <a class="btn btn-secondary" href="/auth/sign-in">Sign in</a>
+            <a class="btn btn-primary" href="/auth/sign-in">Sign in</a>
           </div>
         </header>
         <section class="section">
@@ -29,7 +26,6 @@
             Save destinations, dates, favorite places, and the little moments that
             made each journey unforgettable.
           </p>
-
           <ul class="features">
             <li class="features__item">✨ Keep all your trips in one place</li>
             <li class="features__item">📍 Remember where you've been, when and more</li>
@@ -47,11 +43,10 @@
             <a class="btn btn-link" href="/auth/sign-in">Sign in to your journal</a>
           </div>
         </section>
-
-        <footer class="footer">
-          <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
-        </footer>
-      </div>
+        </div>
+      <footer class="footer">
+        <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
+      </footer>
     </main>
   </body>
 </html>
