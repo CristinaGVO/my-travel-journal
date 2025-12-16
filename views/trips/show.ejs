@@ -3,56 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= trip.title %></title>
+    <title><%= trip.destination %> - My Travel Journal</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-  <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1><%= trip.destination %> at <%= trip.location %></h1>
 
-    <% if (trip.tripType) { %>
-        <p><strong>Trip type:</strong> <%= trip.tripType %></p>
+  <body class="bg bg-trip-detail">
+    <%- include('../partials/_navbar.ejs') %>
+
+    <main class="container">
+      <div class="card card-lg">
+        <h1><%= trip.destination %></h1>
+        <p class="muted"><%= trip.location %></p>
+
+        <% if (trip.tripType) { %>
+          <p><strong>Trip type:</strong> <%= trip.tripType %></p>
         <% } %>
-    
-        <!-- Fechas -->
+
         <% if (trip.startDate || trip.endDate) { %>
           <p>
             <strong>Dates:</strong>
             <% if (trip.startDate) { %>
-              From <%= trip.startDate.toDateString() %>
+              <%= trip.startDate.toDateString() %>
             <% } %>
             <% if (trip.endDate) { %>
-              to <%= trip.endDate.toDateString() %>
+              – <%= trip.endDate.toDateString() %>
             <% } %>
           </p>
         <% } %>
-        <!-- notas -->
+
         <% if (trip.highlights) { %>
           <p><strong>Highlights:</strong> <%= trip.highlights %></p>
         <% } %>
-        <!-- Link de fotos-->
+
+        <% if (trip.rating) { %>
+          <p><strong>Rating:</strong> ⭐ <%= trip.rating %> / 5</p>
+        <% } %>
+
         <% if (trip.photosLink) { %>
           <p>
             <strong>Photos:</strong>
-            <a href="<%= trip.photosLink %>" target="_blank">
+            <a class="btn btn-link" href="<%= trip.photosLink %>" target="_blank">
               View trip photos
             </a>
           </p>
         <% } %>
-        <!-- Rating -->
-        <% if (trip.rating) { %>
-          <p><strong>Rating:</strong> <%= trip.rating %> / 5 ⭐</p>
-        <% } %>
 
-        <a href="/users/<%= user._id %>/trips/<%= trip._id %>/edit">
-            Edit this Trip
+        <div class="actions" style="margin-top: 1.25rem;">
+          <a
+            class="btn btn-primary"
+            href="/users/<%= user._id %>/trips/<%= trip._id %>/edit"
+          >
+            Edit trip
           </a>
 
-        <form
-        action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=DELETE"
-        method="POST"
-      >
-        <button type="submit">Delete this Trip</button>
-      </form>
+          <form
+            action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn-secondary" type="submit">
+              Delete trip
+            </button>
+          </form>
+        </div>
 
+        <footer class="footer">
+          <p class="footer__text">
+            © <%= new Date().getFullYear() %> My Travel Journal
+          </p>
+        </footer>
+      </div>
+    </main>
   </body>
 </html>

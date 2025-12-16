@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up - My Travel Journal </title>
-</head>
-<body>
-  <%- include('../partials/_navbar.ejs') %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - My Travel Journal</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="bg bg-auth">
+    <%- include('../partials/_navbar.ejs') %>
 
-  <main class="page auth-page">
-    <section class="auth-card">
-      <h1>Create your Travel Journal ✈️</h1>
-      <p class="auth-subtitle">
-        Start saving your trips, memories, and favorite places in one place.
-      </p>
+    <main class="container">
+      <div class="card card-lg">
+        <h1>Create your Travel Journal ✈️</h1>
+        <p class="muted">Start saving your trips, memories, and favorite places in one place.</p>
 
+        <form class="form" action="/auth/sign-up" method="POST">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" required />
 
-  <form action="/auth/sign-up" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required />
-    <label for="confirmPassword">Confirm Password:</label>
-    <input 
-      type="password"
-      name="confirmPassword"
-      id="confirmPassword"
-      required 
-    />
-    <button type="submit">Sign Up</button>
-      </form>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
 
-      <p class="auth-footer-text">
-        Already have an account?
-        <a href="/auth/sign-in">Sign In to your journal</a>
-      </p>
-    </section>
-  </main>
-</body>
+          <label for="confirmPassword">Confirm password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            required
+          />
+
+          <button class="btn btn-primary" type="submit">Create account</button>
+        </form>
+
+        <p class="muted" style="margin-top: 1rem;">
+          Already have an account?
+          <a class="btn btn-link" href="/auth/sign-in">Sign in to your journal</a>
+        </p>
+      </div>
+    </main>
+  </body>
 </html>
+

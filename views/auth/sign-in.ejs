@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In - My Travel Journal</title>
-</head>
-<body>
-  <%- include('../partials/_navbar.ejs') %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - My Travel Journal</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="bg bg-auth">
+    <%- include('../partials/_navbar.ejs') %>
+    <main class="container">
+      <div class="card card-lg">
+        <h1>Welcome back, traveler 🌍</h1>
+        <p class="muted">Log in to your travel journal and continue exploring your adventures.</p>
 
-  <main class="page auth-page">
-    <section class="auth-card">
-      <h1>Welcome back, traveler 🌍</h1>
-      <p class="auth-subtitle">
-        Log in to your travel journal and continue exploring your adventures.
-      </p>
+        <form class="form" action="/auth/sign-in" method="POST">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" required />
 
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
 
-  <form action="/auth/sign-in" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required />
+          <button class="btn btn-primary" type="submit">Sign in to your journal</button>
+        </form>
 
-    <button type="submit">Sign In to your journal</button>
-      </form>
-      <p class="auth-footer-text">
-        Don’t have an account yet?
-        <a href="/auth/sign-up">Create one and start your travel journal ✈️</a>
-      </p>
-    </section>
-  </main>
-</body>
+        <p class="muted" style="margin-top: 1rem;">
+          Don’t have an account yet?
+          <a class="btn btn-link" href="/auth/sign-up">Create one and start your journal ✈️</a>
+        </p>
+      </div>
+    </main>
+  </body>
 </html>
+
