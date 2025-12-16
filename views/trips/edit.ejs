@@ -92,7 +92,6 @@
             value="<%= trip.rating || '' %>"
             placeholder="5"
           />
-
           <div class="actions">
             <button class="btn btn-primary" type="submit">Update</button>
             <a class="btn btn-secondary" href="/users/<%= user._id %>/trips/<%= trip._id %>">Cancel</a>
@@ -102,8 +101,8 @@
         
       </div>
       <footer class="footer">
-        <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
-      </footer>
+          <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
+        </footer>
     </main>
   </body>
 </html>
