@@ -14,17 +14,12 @@
         <p class="muted">Save your destination, dates, and the best moments of your adventure.</p>
 
         <form class="form" action="/users/<%= user._id %>/trips" method="POST">
+            
           <label for="destination">Destination</label>
           <input type="text" id="destination" name="destination" required />
 
           <label for="location">Location</label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            placeholder="City, Country or State"
-            required
-          />
+          <input type="text" id="location" name="location" placeholder="City, Country or State" required/>
 
           <label for="tripType">Trip type</label>
           <select id="tripType" name="tripType">
