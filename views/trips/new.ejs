@@ -1,73 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add a New Trip</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body class="bg bg-trips">
+</head>
+
+<body class="bg bg-trips">
     <%- include('../partials/_navbar.ejs') %>
-    <main class="container">
-      <div class="card card-lg">
-        <h1>Add a New Trip</h1>
-        <p class="muted">Save your destination, dates, and the best moments of your adventure.</p>
+        <main class="container">
+            <div class="card card-lg">
+                <h1>Add a New Trip</h1>
+                <p class="muted">Save your destination, dates, and the best moments of your adventure.</p>
 
-        <form class="form" action="/users/<%= user._id %>/trips" method="POST">
-            
-          <label for="destination">Destination</label>
-          <input type="text" id="destination" name="destination" required />
+                <form class="form" action="/users/<%= user._id %>/trips" method="POST">
 
-          <label for="location">Location</label>
-          <input type="text" id="location" name="location" placeholder="City, Country or State" required/>
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" name="destination" placeholder="Name of trip" required />
 
-          <label for="tripType">Trip type</label>
-          <select id="tripType" name="tripType">
-            <option value="">-- Select --</option>
-            <option value="roadtrip">Roadtrip</option>
-            <option value="hiking">Hiking</option>
-            <option value="city">City</option>
-            <option value="beach">Beach</option>
-            <option value="other">Other</option>
-          </select>
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="City, Country or State" required />
 
-          <label for="startDate">Start date</label>
-          <input type="date" id="startDate" name="startDate" />
+                    <label for="tripType">Trip type</label>
+                    <select id="tripType" name="tripType">
+                        <option value="">-- Select --</option>
+                        <option value="roadtrip">Roadtrip</option>
+                        <option value="hiking">Hiking</option>
+                        <option value="city">City</option>
+                        <option value="beach">Beach</option>
+                        <option value="other">Other</option>
+                    </select>
 
-          <label for="endDate">End date</label>
-          <input type="date" id="endDate" name="endDate" />
+                    <label for="startDate">Start date</label>
+                    <input type="date" id="startDate" name="startDate" />
 
-          <label for="highlights">Highlights</label>
-          <textarea
-            id="highlights"
-            name="highlights"
-            rows="4"
-            placeholder="Favorite moments, best time to visit, places you loved, people you met..."
-          ></textarea>
+                    <label for="endDate">End date</label>
+                    <input type="date" id="endDate" name="endDate" />
 
-          <label for="photosLink">Photos link</label>
-          <input
-            type="url"
-            id="photosLink"
-            name="photosLink"
-            placeholder="Link to your photo album, Instagram, Google Photos..."
-          />
+                    <label for="highlights">Highlights</label>
+                    <textarea id="highlights" name="highlights" rows="4"
+                        placeholder="Favorite moments, best time to visit, places you loved, people you met..."></textarea>
 
-          <label for="rating">Rating (1–5)</label>
-          <input type="number" id="rating" name="rating" min="1" max="5" placeholder="5" />
+                    <label for="photosLink">Photos link</label>
+                    <input type="url" id="photosLink" name="photosLink"
+                        placeholder="Link to your photo album, Instagram, Google Photos..." />
 
-          <div class="actions">
-            <button class="btn btn-secondary" type="submit">Add Trip</button>
-            <a class="btn btn-secondary" href="/users/<%= user._id %>/trips">Cancel</a>
-          </div>
-        </form>
+                    <label for="rating">Rating (1–5)</label>
+                    <input type="number" id="rating" name="rating" min="1" max="5" placeholder="5" />
 
-        
-      </div>
-      <footer class="footer">
-          <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
-    </footer>
-    </main>
-  </body>
+                    <div class="actions">
+                        <button class="btn btn-secondary" type="submit">Add Trip</button>
+                        <a class="btn btn-secondary" href="/users/<%= user._id %>/trips">Cancel</a>
+                    </div>
+                </form>
+            </div>
+            <footer class="footer">
+                <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
+            </footer>
+        </main>
+</body>
+
 </html>
-

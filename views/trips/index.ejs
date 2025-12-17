@@ -1,84 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Journal Trips</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
+    </head>
 
-  <body class="bg bg-trips">
+    <body class="bg bg-trips">
     <%- include('../partials/_navbar.ejs') %>
 
     <main class="container">
-      <div class="card card-lg">
+        <div class="card card-lg">
         <h1>Your Journal Trips</h1>
         <p class="muted">Filter your trips and quickly find your favorite adventures.</p>
 
         <% if (showWelcome && user) { %>
-          <div style="margin: 0.75rem 0 1rem; padding: 0.85rem 1rem; border-radius: 14px; background: rgba(15,118,110,0.12); border: 1px solid rgba(15,118,110,0.25);">
+        <div style="margin: 0.75rem 0 1rem; padding: 0.85rem 1rem; border-radius: 14px; background: rgba(15,118,110,0.12); border: 1px solid rgba(15,118,110,0.25);">
             <p style="margin: 0;">
-              Welcome, <strong><%= user.username %></strong> ✨ This is your Travel Journal.
+                Welcome, <strong><%= user.username %></strong> ✨ This is your Travel Journal.
             </p>
-          </div>
+        </div>
         <% } %>
-
         <div class="actions">
-          <a class="btn btn-primary" href="/users/<%= user._id %>/trips/new">Add a new trip</a>
-          <a class="btn btn-secondary" href="/users/<%= user._id %>/trips">Clear filters</a>
+            <a class="btn btn-primary" href="/users/<%= user._id %>/trips/new">Add a new trip</a>
+            <a class="btn btn-secondary" href="/users/<%= user._id %>/trips">Clear filters</a>
         </div>
 
         <!-- Filters -->
         <form class="form" action="/users/<%= user._id %>/trips" method="GET">
-          <label for="tripTypeFilter">Trip type</label>
-          <select id="tripTypeFilter" name="tripType">
+            <label for="tripTypeFilter">Trip type</label>
+        <select id="tripTypeFilter" name="tripType">
             <option value="" <%= selectedTripType === '' ? 'selected' : '' %>>All types</option>
             <option value="roadtrip" <%= selectedTripType === 'roadtrip' ? 'selected' : '' %>>Roadtrip</option>
             <option value="hiking" <%= selectedTripType === 'hiking' ? 'selected' : '' %>>Hiking</option>
             <option value="city" <%= selectedTripType === 'city' ? 'selected' : '' %>>City</option>
             <option value="beach" <%= selectedTripType === 'beach' ? 'selected' : '' %>>Beach</option>
             <option value="other" <%= selectedTripType === 'other' ? 'selected' : '' %>>Other</option>
-          </select>
+        </select>
 
-          <label for="minRatingFilter">Minimum rating</label>
-          <select id="minRatingFilter" name="minRating">
+            <label for="minRatingFilter">Minimum rating</label>
+            <select id="minRatingFilter" name="minRating">
             <option value="" <%= selectedMinRating === '' ? 'selected' : '' %>>Any rating</option>
             <option value="1" <%= selectedMinRating === '1' ? 'selected' : '' %>>1⭐ </option>
             <option value="2" <%= selectedMinRating === '2' ? 'selected' : '' %>>2⭐ </option>
             <option value="3" <%= selectedMinRating === '3' ? 'selected' : '' %>>3⭐ </option>
             <option value="4" <%= selectedMinRating === '4' ? 'selected' : '' %>>4⭐ </option>
             <option value="5" <%= selectedMinRating === '5' ? 'selected' : '' %>>5⭐ </option>
-          </select>
-          <button class="btn btn-secondary" type="submit">Apply filters</button>
+            </select>
+            <button class="btn btn-secondary" type="submit">Apply filters</button>
 
         </form>
         <hr style="margin: 1.25rem 0; border: none; border-top: 1px solid #e2e8f0;" />
 
         <% if (!trips || trips.length === 0) { %>
-          <p class="muted">No trips found. Try clearing filters or add a new trip.</p>
+            <p class="muted">No trips found. Try clearing filters or add a new trip.</p>
         <% } else { %>
-          <ul style="padding-left: 1.1rem; margin: 0;">
+            <ul style="padding-left: 1.1rem; margin: 0;">
             <% trips.forEach((trip) => { %>
-              <li style="margin: 0.55rem 0;">
+                <li style="margin: 0.55rem 0;">
                 <a href="/users/<%= user._id %>/trips/<%= trip._id %>">
-                  <strong><%= trip.destination %></strong> — <%= trip.location %>
-                  <% if (trip.tripType) { %>
+                    <strong><%= trip.destination %></strong> — <%= trip.location %>
+                    <% if (trip.tripType) { %>
                     • <%= trip.tripType %>
-                  <% } %>
-                  <% if (trip.rating) { %>
+                    <% } %>
+                    <% if (trip.rating) { %>
                     • ⭐ <%= trip.rating %>/5
-                  <% } %>
+                    <% } %>
                 </a>
-              </li>
+                </li>
             <% }) %>
-          </ul>
+            </ul>
         <% } %>
 
         
-      </div>
-      <footer class="footer">
+        </div>
+        <footer class="footer">
         <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
-      </footer>
+        </footer>
     </main>
-  </body>
+    </body>
 </html>

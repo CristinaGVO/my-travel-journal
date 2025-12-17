@@ -38,7 +38,6 @@ app.use(passUserToView);
 
 
 
-
 app.get('/', (req, res) => {
   if (req.session.user) {
     res.redirect(`/users/${req.session.user._id}/trips`);
@@ -46,7 +45,6 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
   }
 });
-
 
 app.use('/auth', authController);
 app.use(isSignedIn);
