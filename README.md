@@ -24,6 +24,9 @@ This project was created as part of General Assembly’s Software Engineering Im
 - Filter trips by type (roadtrip, hiking, city, beach, etc.)
 - Filter or sort trips by rating
 - Upload multiple photos using external services
+- Add flash messages for success and errors when the user tries to create a new account or log in.
+- Add a verification step so that when the user wants to delete a trip, they are asked: "Are you sure you want to delete this trip?"
+
 
 
 *Stretch Goals I did:* As part of improving my project, I added a simple filtering feature for the trips page.
@@ -54,12 +57,12 @@ This helps the user find their best experiences quickly.
 - MongoDB + Mongoose  
 - EJS  
 - CSS 
-- Session-based authentication  
+- Session-based authentication clon
 - Git & GitHub  
 
 *Proyect Links:*
 
-Deployed App link:
+Deployed App link: 
 
 GitHub Repository link: https://github.com/CristinaGVO/my-travel-journal.git
 

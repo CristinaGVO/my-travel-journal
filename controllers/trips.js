@@ -25,7 +25,8 @@ router.get('/', async (req, res) => {
           // solo filtra si el trip tiene rating
           return typeof trip.rating === 'number' && trip.rating >= min;
         });
-    } // para incluir el nombre en sigin
+    } // para incluir el nombre en sig-in
+    
       const showWelcome = welcome === 'true';
 
     res.render('trips/index.ejs', {

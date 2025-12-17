@@ -19,7 +19,6 @@ mongoose.connection.on('connected', () => {
 });
 
 
-
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(morgan("dev"));
@@ -48,12 +47,6 @@ app.get('/', (req, res) => {
   }
 });
 
-
-app.get('/', (req, res) => {
-  res.render('index.ejs', {
-    user: req.session.user,
-  });
-});
 
 app.use('/auth', authController);
 app.use(isSignedIn);

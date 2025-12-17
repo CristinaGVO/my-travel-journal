@@ -45,6 +45,8 @@ router.post('/sign-up', async (req, res) => {
   }
 });
 
+
+// ruta que ayuda para que se vea el mensaje de bienvenida
 router.post('/sign-in', async (req, res) => {
   try {
     // First, get the user from the database
