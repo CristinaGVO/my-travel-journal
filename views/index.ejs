@@ -6,8 +6,9 @@
     <title>My Travel Journal</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
+
   <body class="bg bg-home">
-    <main class="container">
+    <main class="container page-no-nav">
       <div class="card card-lg">
         <header class="hero">
           <h1 class="hero__title">My Travel Journal</h1>
@@ -19,6 +20,7 @@
             <a class="btn btn-primary" href="/auth/sign-in">Sign in</a>
           </div>
         </header>
+
         <section class="section">
           <h2 class="section__title">Track your trips and adventures</h2>
           <p class="section__text">
@@ -42,7 +44,8 @@
             <a class="btn btn-primary" href="/auth/sign-in">Sign in to your journal</a>
           </div>
         </section>
-        </div>
+      </div>
+      
       <footer class="footer">
         <p class="footer__text">© <%= new Date().getFullYear() %> My Travel Journal</p>
       </footer>
