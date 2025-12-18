@@ -24,12 +24,14 @@ This project was created as part of General Assembly’s Software Engineering Im
 - Filter trips by type (roadtrip, hiking, city, beach, etc.)
 - Filter or sort trips by rating
 - Upload multiple photos using external services
-- Add flash messages for success and errors when the user tries to create a new account or log in.
+- Add messages for success and errors when the user tries to create a new account or log in.
 - Add a verification step so that when the user wants to delete a trip, they are asked: "Are you sure you want to delete this trip?"
+- Add images to the application, not just links.
+- Add a map so that people can select the exact location they visited, for example, by using a Google Maps API.
+- Add more filtering options.
 
 
-
-*Stretch Goals I did:* As part of improving my project, I added a simple filtering feature for the trips page.
+*Stretch Goals I did:* As part of improving my project, I added a some filtering feature for the trips page.
 
 Trip Filters (By Type and Rating)
 
@@ -54,11 +56,15 @@ This helps the user find their best experiences quickly.
  
 - Node.js  
 - Express.js  
-- MongoDB + Mongoose  
+- MongoDB 
+- Mongoose  
 - EJS  
 - CSS 
 - Session-based authentication clon
-- Git & GitHub  
+- Git & GitHub
+- Trello
+- JavaScript
+
 
 *Proyect Links:*
 
