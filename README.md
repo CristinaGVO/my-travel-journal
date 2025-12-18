@@ -21,7 +21,7 @@ After signing up, users can record, view, update, and delete their trips — sto
 
 This project was created as part of General Assembly’s Software Engineering Immersive (Project 2).
 
-_Features (MVP)_
+*Features (MVP)*
 
 -   User authentication (sign up, sign in, session-based auth)
 -   Authorization (only logged-in users can manage their trips)
@@ -35,7 +35,7 @@ _Features (MVP)_
 -   EJS templates for views
 -   RESTful routing structure
 
-_Stretch Goals_
+*Stretch Goals*
 
 -   Filter trips by type (roadtrip, hiking, city, beach, etc.)
 -   Filter or sort trips by rating
@@ -46,11 +46,11 @@ _Stretch Goals_
 -   Add a map so that people can select the exact location they visited, for example, by using a Google Maps API.
 -   Add more filtering options.
 
-_Stretch Goals I did:_ As part of improving my project, I added a some filtering feature for the trips page.
+*Stretch Goals I did:* As part of improving my project, I added a some filtering feature for the trips page.
 
 Trip Filters (By Type and Rating)
 
-_Filter by Trip Type_
+*Filter by Trip Type*
 
 I wanted users to quickly find specific kinds of trips—like only beach trips, only city trips, or only hiking adventures.
 So I added a dropdown menu where the user can choose a trip type, and the page will show only the trips that match.
@@ -59,7 +59,7 @@ Examples: Show only beach trips - Show only roadtrip adventures.
 
 This makes the list easier to navigate when many trips are saved.
 
-_Filter by Rating_
+*Filter by Rating*
 
 I also added the option to filter trips by the minimum rating.
 
@@ -67,7 +67,7 @@ Example: Show trips rated 4 stars or higher - Show trips rated 3+
 
 This helps the user find their best experiences quickly.
 
-_Technologies Used_
+*Technologies Used*
 
 -   Node.js
 -   Express.js
@@ -80,7 +80,7 @@ _Technologies Used_
 -   Trello
 -   JavaScript
 
-_Proyect Links:_
+*Proyect Links:*
 
 Deployed App link:
 
