@@ -10,10 +10,10 @@ router.get('/', async (req, res) => {
   
       let trips = currentUser.trips;
   
-      const { tripType, minRating, welcome} = req.query;
+      const { tripType, minRating, welcome} = req.query; //los filtros donde el backend lee los friltros que envie desde el formulario
   
       // Filtro por tipo de viaje
-      if (tripType && tripType !== '') {
+      if (tripType && tripType !== '') { // si el usuario selecciono tipo de viaje uso el metodo filter y me muestra solo los viajes que tienen ese tipo de viaje
         trips = trips.filter((trip) => trip.tripType === tripType);
     }
   
@@ -22,9 +22,11 @@ router.get('/', async (req, res) => {
         const min = Number(minRating);
         trips = trips.filter((trip) => {
 
-          // solo filtra si el trip tiene rating
+          // solo filtra si el trip tiene rating y convierto el valor a numero
           return typeof trip.rating === 'number' && trip.rating >= min;
         });
+
+
     } // para incluir el nombre en sig-in
     
       const showWelcome = welcome === 'true';

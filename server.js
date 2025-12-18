@@ -3,11 +3,11 @@ dotenv.config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const methodOverride = require('method-override');
+const methodOverride = require('method-override'); //middleware
 const morgan = require('morgan');
 const session = require('express-session');
-const isSignedIn = require('./middleware/is-signed-in.js');
-const passUserToView = require('./middleware/pass-user-to-view.js');
+const isSignedIn = require('./middleware/is-signed-in.js'); // middleware
+const passUserToView = require('./middleware/pass-user-to-view.js'); //middleware
 const authController = require('./controllers/auth.js');
 const tripsController = require('./controllers/trips.js');
 const port = process.env.PORT ? process.env.PORT : '3000';

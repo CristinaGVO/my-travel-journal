@@ -1,72 +1,91 @@
-**🌍 My-Travel-Journal**
+**My-Travel-Journal**
 
-## Home Page
+## Screenshots
+
+### Home Page
 
 ![Home Page](screenshots/home-page.png)
 
-## My Trips
+### My Trips
 
 ![Trips Page](screenshots/journal-trips.png)
 
-## Add a New Trip
+### Add a New Trip
 
 ![Add Trip](screenshots/add-new-trip.png)
 
-## Trip Show
+### Trip Details
 
 ![My Trips Details - update - delete](screenshots/trip-details.png)
 
-My Travel Journal is a full-stack application that allows users to create a personal travel journal.
-After signing up, users can record, view, update, and delete their trips — storing memories such as destination, location, trip type, dates, notes, photos links, and ratings.
+##Description##
 
-This project was created as part of General Assembly’s Software Engineering Immersive (Project 2).
+**My Travel Journal** is a full-stack MEN Stack application that allows users to create and manage a personal travel journal.
 
-*Features (MVP)*
+After signing up and logging in, users can record their trips and store memories such as destinations, locations, trip types, dates, highlights, photo links, and ratings.  
+Each user has access only to their own data, ensuring privacy and security.
 
--   User authentication (sign up, sign in, session-based auth)
--   Authorization (only logged-in users can manage their trips)
--   CRUD functionality for trips:
-    -   Create a new trip
-    -   View all trips (Index)
-    -   View trip details (Show)
-    -   Edit a trip
-    -   Delete a trip
--   Embedded Trip schema inside the User model using Mongoose
--   EJS templates for views
--   RESTful routing structure
+This project was built as **Project 2** for General Assembly’s Software Engineering Immersive program.
 
-*Stretch Goals*
+## Features (MVP)
 
--   Filter trips by type (roadtrip, hiking, city, beach, etc.)
--   Filter or sort trips by rating
--   Upload multiple photos using external services
--   Add messages for success and errors when the user tries to create a new account or log in.
--   Add a verification step so that when the user wants to delete a trip, they are asked: "Are you sure you want to delete this trip?"
--   Add images to the application, not just links.
--   Add a map so that people can select the exact location they visited, for example, by using a Google Maps API.
--   Add more filtering options.
+- User authentication (sign up, sign in, session-based authentication)
+- Authorization to ensure only logged-in users can access trip data
+- Full CRUD functionality for trips:
+  - Create new trips
+  - View all trips (Index)
+  - View trip details (Show)
+  - Edit trips
+  - Delete trips
+- Embedded Trip schema inside the User model using Mongoose
+- RESTful routing
+- Dynamic views using EJS templates
 
-*Stretch Goals I did:* As part of improving my project, I added a some filtering feature for the trips page.
+---
 
-Trip Filters (By Type and Rating)
+## Stretch Goals
 
-*Filter by Trip Type*
+- Filter trips by type (roadtrip, hiking, city, beach, etc.)
+- Filter trips by rating
+- Upload multiple photos using external services
+- Display success and error messages during authentication
+- Confirmation before deleting a trip
+- Add image uploads instead of photo links
+- Integrate a map (Google Maps API) to select locations
+- Add more filtering and sorting options
 
-I wanted users to quickly find specific kinds of trips—like only beach trips, only city trips, or only hiking adventures.
-So I added a dropdown menu where the user can choose a trip type, and the page will show only the trips that match.
+---
 
-Examples: Show only beach trips - Show only roadtrip adventures.
+## Stretch Features Implemented
 
-This makes the list easier to navigate when many trips are saved.
+### Trip Filters (By Type and Rating)
 
-*Filter by Rating*
+To improve usability as the number of trips grows, I implemented filtering functionality on the trips index page.
 
-I also added the option to filter trips by the minimum rating.
+#### Filter by Trip Type
+Users can filter trips by category such as:
+- Roadtrip
+- Hiking
+- City
+- Beach
+- Other
 
-Example: Show trips rated 4 stars or higher - Show trips rated 3+
+This allows users to quickly find specific kinds of trips without scrolling through all entries.
 
-This helps the user find their best experiences quickly.
+#### Filter by Rating
+Users can also filter trips by a minimum rating (e.g., 3 stars or higher).  
+This helps users quickly rediscover their best travel experiences.
 
+---
+## Technical Highlights
+
+- Embedded trip documents inside the User model using Mongoose
+- Session-based authentication using `express-session`
+- Middleware to protect routes and restrict access to authenticated users
+- Query-based filtering using Express and JavaScript array methods
+- Clean separation of concerns using controllers, models, views, and middleware
+
+---
 *Technologies Used*
 
 -   Node.js
@@ -82,10 +101,14 @@ This helps the user find their best experiences quickly.
 
 *Proyect Links:*
 
-Deployed App link:
+Deployed App link: https://mytraveljournal-9e8323e47ea3.herokuapp.com/
 
 GitHub Repository link: https://github.com/CristinaGVO/my-travel-journal.git
 
 Trello planning link: https://trello.com/b/ySe8UN2v/proyect-2-my-travel-journal
 
-Cristina Gibney 2025 - Student General Assemmbly
+## Author
+
+**Cristina Gibney**  
+Software Engineering Immersive Student  
+General Assembly — 2025

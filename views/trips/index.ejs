@@ -27,7 +27,8 @@
             <a class="btn btn-secondary" href="/users/<%= user._id %>/trips">Clear filters</a>
         </div>
 
-        <!-- Filters -->
+        <!-- Filtros envia la informacion con get-->
+
         <form class="form" action="/users/<%= user._id %>/trips" method="GET">
             <label for="tripTypeFilter">Trip type</label>
         <select id="tripTypeFilter" name="tripType">
