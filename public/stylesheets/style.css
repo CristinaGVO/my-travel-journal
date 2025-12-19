@@ -40,21 +40,25 @@ a {
     z-index: 1;
 }
 
-/* pone la foto por página usando clases en <body> */
+/* pone la foto por página usando clases en */
 .bg-home {
-    background-image: url('/images/home.jpeg');}
+    background-image: url('/images/home.jpeg');
+}
 
 .bg-auth {
-    background-image: url('/images/auth.jpeg');}
+    background-image: url('/images/auth.jpeg');
+}
 
 .bg-trips {
-    background-image: url('/images/trips.jpeg');}
+    background-image: url('/images/trips.jpeg');
+}
+
 .bg-trip-detail {
-    background-image: url('/images/trip-detail.jpeg');}
+    background-image: url('/images/trip-detail.jpeg');
+}
 
 
-/* 
-   NAVBAR*/
+/* NAVBAR*/
 nav {
     width: min(980px, 92%);
     margin: 1rem auto 0;
@@ -90,9 +94,120 @@ nav a:hover {
     }
 }
 
-/* LAYOUT GENERAL */
+
+/* home*/
+.home-page .section {
+    margin-top: 1.75rem;
+}
+
+.home-page .section__title {
+    margin: 0 auto 1rem;
+    max-width: 60ch;
+    line-height: 1.2;
+}
+
+.home-page .features {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 62ch;
+
+    display: grid;
+    gap: 0.85rem;
+
+}
+
+.home-page .features__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(15, 23, 42, 0.10);
+
+    line-height: 1.6;
+}
+
+
+.home-page .features__item::before {
+    content: "🌎";
+    flex: 0 0 auto;
+    line-height: 1.2;
+    margin-top: 0.1rem;
+}
+
+
+.home-page .card {
+    text-align: center;
+
+
+    display: flex;
+    flex-direction: column;
+    min-height: min(78vh, 760px);
+}
+
+.home-page .hero__title {
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+}
+
+.home-page .hero__subtitle {
+    font-size: 1.05rem;
+    max-width: 56ch;
+    margin: 0.6rem auto 0;
+}
+
+
+.home-page .section__text {
+    max-width: 65ch;
+    margin: 0.5rem auto 0;
+}
+
+.home-page .features {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem auto 0;
+    max-width: 56ch;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.home-page .features__item {
+    margin: 0;
+}
+
+
+.home-page .home-divider {
+    border: none;
+    border-top: 1px solid rgba(15, 23, 42, 0.14);
+    width: 100%;
+    margin: 2.5rem 0 2rem;
+}
+
+
+.home-page .section--cta {
+    margin-top: auto;
+    padding-top: 0;
+
+}
+
+.home-page .section {
+    margin-top: 4rem;
+}
+
+.home-page .actions {
+    justify-content: center;
+    margin-top: 2.00rem;
+    gap: 1rem;
+}
+
+/* LAYOUT GENERAL que es la card y foto debajo */
 .container {
-    width: min(980px, 92%);
+    width: min(990px, 92%);
     margin: 0 auto;
     padding: 2.5rem 0;
 
@@ -104,17 +219,11 @@ nav a:hover {
 /* PÁGINAS SIN NAV */
 
 .container.page-no-nav {
-    /* pisa el grid de .container */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* centra horizontal */
     justify-content: flex-start;
-    /* arriba con espacio */
-
     min-height: 100vh;
-
-    /* más margen arriba porque no hay navbar */
     padding-top: clamp(60px, 10vh, 130px);
     padding-bottom: 32px;
 }
@@ -124,8 +233,7 @@ nav a:hover {
     margin-top: auto;
 }
 
-/* 
-   CARD*/
+/*CARD*/
 .card {
     width: 100%;
     max-width: 990px;
@@ -142,13 +250,11 @@ nav a:hover {
     border-radius: 20px;
 }
 
-/* Auth más grande */
 .bg-auth .card.card-lg {
     max-width: 990px;
     padding: 2.8rem;
 }
 
-/* Centrar texto arriba en auth */
 .bg-auth .card-lg h1,
 .bg-auth .card-lg .muted {
     text-align: center;
@@ -185,7 +291,7 @@ p {
     list-style: none;
     padding-left: 0;
     margin: 0.75rem 0 0;
-  }
+}
 
 .features__item {
     margin: 0.5rem 0;
@@ -199,7 +305,6 @@ p {
     margin-top: 0.75rem;
 }
 
-/* Aplica igual a <a> y <button> */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -235,7 +340,7 @@ p {
     outline-offset: 2px;
 }
 
-/* Primary */
+
 .btn-primary {
     background: #0f766e;
     color: #ffffff;
@@ -247,7 +352,7 @@ p {
     background: rgba(15, 118, 110, 1);
 }
 
-/* Secondary */
+
 .btn-secondary {
     background: #0f766e;
     color: #ffffff;
@@ -259,7 +364,7 @@ p {
     border-color: rgba(15, 23, 42, 0.28);
 }
 
-/* Link button */
+
 .btn-link {
     background: transparent;
     color: #0f766e;
