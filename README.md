@@ -98,6 +98,13 @@ This helps users quickly rediscover their best travel experiences.
 -   Git & GitHub
 -   Trello
 -   JavaScript
+-   VS
+
+---
+*Resources*
+- w3schools
+- Labs and lectures class
+- Mdn_
 
 *Proyect Links:*
 
