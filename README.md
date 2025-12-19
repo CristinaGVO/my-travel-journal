@@ -18,7 +18,7 @@
 
 ![My Trips Details - update - delete](screenshots/trip-details.png)
 
-##Description##
+
 
 **My Travel Journal** is a full-stack MEN Stack application that allows users to create and manage a personal travel journal.
 
