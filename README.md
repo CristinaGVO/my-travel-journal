@@ -4,7 +4,7 @@
 
 ### Home Page
 
-![Home Page](screenshots/home-page.png)
+![Home Page](screenshots/home.png)
 
 ### My Trips
 
@@ -110,5 +110,4 @@ Trello planning link: https://trello.com/b/ySe8UN2v/proyect-2-my-travel-journal
 ## Author
 
 **Cristina Gibney**  
-Software Engineering Immersive Student  
-General Assembly — 2025
+Software Engineering Student  - General Assembly — 2025
